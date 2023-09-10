@@ -6,9 +6,19 @@
     name: nodejs
     state: present
 
+- name: app presetup
+  ansible.builtin.import_tasks:
+    file: app_presetup.yml
+
+- name: Load nodejs dependencies
+
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
+
+- name: systemd restart
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yml
 
 
 
-
-
-}
