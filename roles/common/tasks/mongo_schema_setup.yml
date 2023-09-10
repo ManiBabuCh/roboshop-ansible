@@ -9,4 +9,4 @@
     state: installed
 
 - name:  Load schema
-  ansible.builtin.shell: mongo --host mongodb-dev.manibabu.site
+  ansible.builtin.shell: mongo --host mongodb-dev.manibabu.site </app/schema/{{ component }}.js
