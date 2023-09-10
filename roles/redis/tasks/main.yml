@@ -1,0 +1,35 @@
+- name:  redis repo installation
+  ansible.builtin.yum:
+    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    state: installed
+
+
+- name: Install redis 6.2
+  ansible.builtin.dnf:
+    name: '@redis:6.2'
+    state: installed
+
+
+
+
+
+
+echo -e "${color} enable module${nocolor}"
+yum module enable redis:remi-6.2 -y
+status_check $?
+
+
+echo -e "${color} install redis${nocolor}"
+yum install redis -y
+status_check $?
+
+
+echo -e "${color}  conf file${nocolor}"
+sed -i -e 's?127.0.0.1?0.0.0.0?' /etc/redis.conf /etc/redis/redis.conf
+status_check $?
+
+
+echo -e "${color} service restart${nocolor}"
+systemctl enable redis
+systemctl start redis
+status_check $?
