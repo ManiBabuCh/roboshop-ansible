@@ -6,4 +6,8 @@
 
 - name: mongo_schema_setup
   ansible.builtin.import_role:
-    file: mongo_schema_setup
+    name: common
+    tasks_from: mongo_schema_setup
+
+
+
