@@ -11,9 +11,11 @@
   ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
   args:
     chdir: /app
+
 - name: systemd_setup
   ansible.builtin.import_tasks:
     file: mysql_schema_setup
+
 - name: systemd_setup
   ansible.builtin.import_tasks:
     file: systemd_setup
