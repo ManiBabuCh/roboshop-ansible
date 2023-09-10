@@ -14,11 +14,11 @@
 
 - name: systemd_setup
   ansible.builtin.import_tasks:
-    file: mysql_schema_setup
+    file: mysql_schema_setup.yml
 
 - name: systemd_setup
   ansible.builtin.import_tasks:
-    file: systemd_setup
+    file: systemd_setup.yml
 
 
 
