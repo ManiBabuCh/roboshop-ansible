@@ -5,4 +5,4 @@
 
 - name:  Load schema
   ansible.builtin.shell: mysql -h mysql-dev.manibabu.site -uroot -pRoboShop@1 </app/schema/{{ component }}.sql
-  mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql
+
