@@ -20,5 +20,8 @@
   ansible.builtin.import_tasks:
     file: systemd_setup.yml
 
-
+- name: mongo_schema_setup
+  ansible.builtin.import_tasks:
+    file: mongo_schema_setup
+    when mongo_schema
 
