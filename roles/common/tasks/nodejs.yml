@@ -22,6 +22,6 @@
 
 - name: mongo_schema_setup
   ansible.builtin.import_tasks:
-    file: mongo_schema_setup
-    when: mongo_schema
+    file: mongo_schema_setup.yml
+  when: mongo_schema
 
